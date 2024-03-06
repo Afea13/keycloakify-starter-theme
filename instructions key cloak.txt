@@ -1,0 +1,42 @@
+Key cloak
+SSO architecture : identity provider , service provider, user
+https://www.linkedin.com/pulse/understanding-single-sign-on-sso-architecture-indra-nand-jha#:~:text=Published%20Mar%2023%2C%202023,remembering%20multiple%20usernames%20and%20passwords.
+
+keycloak proviodes role based access to authenticated users. 
+
+keycloak gives two types of tokens. 
+1- for the user accounts to be logged in
+2- a token for the access through api links. not everyone  can connect through the api's.
+
+another use from keycloak:-
+OpenID Connect protocol: is also implemented with keycloak. 
+so openidconnect is used by google, facebook or keycloak to authenticate the same user.
+ while SSO also does the same thing but the underlying working is different
+
+keycloak supports both SSO and openidconnect
+
+how it works:-
+*) it validates the credentials and issues a JWT token. then this token is used with each request.
+*) if a person has a session key, another person canno get the access to the server.
+
+concepts of keycloak:-
+*) realm
+*) clients
+
+
+
+
+instructions:-
+https://www.youtube.com/watch?v=x3ux2JM1Bxk
+create a dockerfile
+then run the command
+docker build -t keycloak-app .
+
+
+starter
+npm run build-keycloak-theme
+
+main docker mai:-
+docker build -t keycloak-app .
+docker run -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin -p 8080:8080 keycloak-app
+
